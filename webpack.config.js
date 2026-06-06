@@ -27,14 +27,6 @@ module.exports = {
         clean: true,
         chunkFilename: "[name].[contenthash].js"
     },
-    devServer: {
-        port: 8004,
-        static: { directory: public() },
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Private-Network': 'true',
-        },
-    },
     stats  : {modules: false, assetsSort: "size", assetsSpace: 50},
     module : {
         rules: [
@@ -64,7 +56,7 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {loader: "css-loader", options: {url: false}},
                     "postcss-loader",
-                    { loader: "sass-loader", options: { sassOptions: { silenceDeprecations: ['import'] } } },
+                    "sass-loader",
                 ]
             },
         ],

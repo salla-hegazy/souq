@@ -1,21 +1,8 @@
-import Alpine from 'alpinejs';
 import MobileMenu from 'mmenu-light';
 import Swal from 'sweetalert2';
 import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
-import CartManager from './modules/CartManager';
-import WishlistManager from './modules/WishlistManager';
-import SearchManager from './modules/SearchManager';
-import GsapAnimator from './gsap/GsapAnimator';
-import './alpine/ui-store';
-import './alpine/wishlist-store';
-import './alpine/search-store';
-import './alpine/comparison-store';
-
-// Expose Alpine globally and start it
-window.Alpine = Alpine;
-Alpine.start();
 
 class App extends AppHelpers {
   constructor() {
@@ -297,15 +284,4 @@ isElementLoaded(selector){
   }
 }
 
-// Initialize SOUQ OOP singletons
-window.__cart     = new CartManager();
-window.__wishlist = new WishlistManager();
-window.__search   = new SearchManager();
-window.__animator = new GsapAnimator();
-
-salla.onReady(() => {
-  (new App).loadTheApp();
-  window.__cart.init();
-  // GSAP boots after scripts fully load (GSAP is deferred)
-  window.addEventListener('load', () => window.__animator.init());
-});
+salla.onReady(() => (new App).loadTheApp());
