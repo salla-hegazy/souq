@@ -10,7 +10,18 @@
       "close_menu": "Close menu"
     },
     "appBanner": {
-      "download_now": "download now"
+      "download_now": "Download Now"
+    },
+    "comments": {
+      "submit": "Submit Comment"
+    },
+    "footer": {
+      "pages_links": "Page Links"
+    },
+    "home": {
+      "display_all": "View All",
+      "latest_products": "Latest Products",
+      "testimonials": "Customer Reviews"
     }
   },
   "pages": {
@@ -19,16 +30,30 @@
       "add_to_cart": "Add to Cart",
       "book_now": "Book Now",
       "checkout": "Checkout",
+      "complete_order": "Complete Order",
       "empty_cart": "Your cart is empty",
       "empty_cart_sub": "You haven't added any products yet",
       "continue_shopping": "Continue Shopping",
       "subtotal": "Subtotal",
+      "total": "Total",
+      "final_total": "Grand Total",
+      "summary": "Order Summary",
+      "order_options_total": "Options Total",
+      "shipping_cost": "Shipping Cost",
+      "discount": "Discount",
+      "VAT_tax_amount": "VAT",
       "free_shipping": "Free Shipping",
+      "free_shipping_alert": "Add {amount} more for free shipping",
+      "has_free_shipping": "Congratulations! You've earned free shipping",
       "free_shipping_remaining": "Add {amount} for free shipping",
       "coupon_placeholder": "Enter discount code",
       "apply_coupon": "Apply Coupon",
       "remove": "Remove",
-      "quantity": "Quantity"
+      "quantity": "Quantity",
+      "out_of_stock": "Out of Stock",
+      "reservations": "Reservations",
+      "item_options": "Item Options",
+      "gift_widget_title": "Would you like to add a gift?"
     },
     "order": {
       "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
@@ -36,7 +61,33 @@
       "delete_period_ended": "The period to delete the review has ended",
       "days_since_added": "days since it was added",
       "option_name": "Option name",
-      "option_content": "Content"
+      "option_content": "Content",
+      "order_rating_title": "Rate your order",
+      "order_rating_message": "Share your feedback to help us improve",
+      "order_cancelation_desc": "Are you sure you want to cancel this order?"
+    },
+    "orders": {
+      "non_orders": "No orders yet",
+      "date": "Order Date",
+      "status": "Order Status",
+      "total": "Total",
+      "branch": "Branch",
+      "shipment_no": "Shipment Number",
+      "tracking_url": "Tracking URL",
+      "gift_tag": "Gift Card",
+      "print": "Print",
+      "print_order_details": "Print Order Details",
+      "to_order_invoice_contact_vendor": "Contact the store to get an invoice",
+      "click_here": "Click Here",
+      "pending_payment_expired": "Payment period has expired",
+      "your_order_is_under_review": "Your order is under review",
+      "finish_payment": "Complete Payment",
+      "reorder": "Reorder",
+      "reorder_description": "The products from this order will be added to your cart",
+      "reorder_confirmation": "Would you like to reorder these products?",
+      "cancel": "Cancel Order",
+      "cancel_confirmation": "Are you sure you want to cancel this order?",
+      "file_url": "File URL"
     },
     "products": {
       "out_of_stock": "Out of Stock",
@@ -47,7 +98,25 @@
       "donation_amount": "Donation amount",
       "starting_price": "Starting from",
       "pre_order_now": "Pre-order Now",
-      "comparison_limit": "Cannot compare more than 4 products"
+      "comparison_limit": "Cannot compare more than 4 products",
+      "weight": "Weight",
+      "size_guides": "Size Guide",
+      "show_size_guides": "View Size Guide",
+      "attachments": "Attachments",
+      "add_note": "Add Note",
+      "add_file": "Add File",
+      "notes_placeholder": "Write your note here...",
+      "calories": "Calories",
+      "tax_included": "Tax included",
+      "read_more": "Read More",
+      "sold": "sold",
+      "sku": "SKU",
+      "availability": "Availability",
+      "select_branch": "Select Branch",
+      "price": "Price",
+      "quantity": "Quantity",
+      "similar_products": "Similar Products",
+      "expected_to_be": "Expected to arrive"
     },
     "product": {
       "description": "Description",
@@ -64,6 +133,64 @@
       "add_to_wishlist": "Add to wishlist",
       "remove_from_wishlist": "Remove from wishlist",
       "sticky_add_to_cart": "Add to Cart"
+    },
+    "thank_you": {
+      "order_id": "Order Number",
+      "order_details": "Order Details",
+      "email_sent": "An order confirmation has been sent to your email",
+      "resend_email": "Resend Email"
+    },
+    "blog_categories": {
+      "categories": "Blog Categories",
+      "no_articles": "No articles in this category"
+    },
+    "blog_articles": {
+      "related": "Related Articles"
+    },
+    "brands": {
+      "non_products": "No products for this brand",
+      "non_brands": "No brands available",
+      "try_again": "Try again"
+    },
+    "categories": {
+      "sorting": "Sort by"
+    },
+    "testimonials": {
+      "sort_by_date_desc": "Newest first",
+      "sort_by_date_asc": "Oldest first",
+      "sort_by_rating_desc": "Highest rating",
+      "sort_by_rating_asc": "Lowest rating"
+    },
+    "loyalty_program": {
+      "you_have": "You have",
+      "point": "point",
+      "exchange_points": "Redeem Points",
+      "ways_to_get_points": "Ways to earn points",
+      "copy_link": "Copy Link",
+      "completed": "Completed",
+      "free_product": "Free Product"
+    },
+    "offer": {
+      "offer_finished": "This offer has ended",
+      "offer_expired_message": "Sorry, this offer has expired",
+      "offer_remaining_time": "Time remaining",
+      "included_products": "Included Products"
+    },
+    "rating": {
+      "rate": "Rate",
+      "pending": "Pending review",
+      "rate_the_store": "Rate the store",
+      "rate_shipping": "Rate shipping"
+    },
+    "profile": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "birthday": "Birthday",
+      "birthday_placeholder": "DD/MM/YYYY",
+      "gender": "Gender",
+      "gender_placeholder": "Select gender",
+      "male": "Male",
+      "female": "Female"
     }
   },
   "common": {
@@ -73,18 +200,52 @@
     "no_results": "No results found",
     "close": "Close",
     "view_all": "View All",
-    "learn_more": "Learn More"
+    "learn_more": "Learn More",
+    "elements": {
+      "back_home": "Back to Home",
+      "cancel": "Cancel",
+      "email": "Email",
+      "location": "Location",
+      "mobile": "Mobile",
+      "note": "Note",
+      "ok": "OK",
+      "save": "Save",
+      "warning": "Warning",
+      "tax_number": "Tax Number"
+    },
+    "errors": {
+      "404": "Page not found"
+    },
+    "titles": {
+      "home": "Home",
+      "support": "Support"
+    },
+    "uploader": {
+      "browse": "Browse files",
+      "choose_suitable_picture": "Choose a suitable picture",
+      "drag_and_drop": "Drag and drop file here or"
+    }
   },
   "home": {
     "hero_cta": "Shop Now",
     "featured_products": "Featured Products",
     "new_arrivals": "New Arrivals",
     "shop_now": "Shop Now",
+    "learn_more": "Learn More",
+    "trust_secure": "Secure Payment",
+    "trust_shipping": "Fast Shipping",
+    "trust_returns": "Easy Returns",
+    "trust_support": "24/7 Support",
+    "newsletter_badge": "Newsletter",
     "newsletter_title": "Subscribe to our newsletter",
     "newsletter_subtitle": "Get the latest deals and products delivered to your inbox",
     "newsletter_placeholder": "Your email address",
     "newsletter_subscribe": "Subscribe",
-    "newsletter_success": "Successfully subscribed!"
+    "newsletter_success": "Successfully subscribed!",
+    "newsletter_success_message": "Thank you for subscribing, the latest offers will reach you soon",
+    "newsletter_privacy": "We respect your privacy",
+    "newsletter_no_spam": "We will not send you spam",
+    "newsletter_unsubscribe": "You can unsubscribe at any time"
   },
   "footer": {
     "quick_links": "Quick Links",

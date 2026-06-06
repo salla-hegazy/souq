@@ -11,6 +11,17 @@
     },
     "appBanner": {
       "download_now": "حمله الان"
+    },
+    "comments": {
+      "submit": "إرسال التعليق"
+    },
+    "footer": {
+      "pages_links": "روابط الصفحات"
+    },
+    "home": {
+      "display_all": "عرض الكل",
+      "latest_products": "أحدث المنتجات",
+      "testimonials": "آراء العملاء"
     }
   },
   "pages": {
@@ -19,16 +30,30 @@
       "add_to_cart": "أضف إلى السلة",
       "book_now": "احجز الآن",
       "checkout": "إتمام الشراء",
+      "complete_order": "إتمام الطلب",
       "empty_cart": "سلتك فارغة",
       "empty_cart_sub": "لم تقم بإضافة أي منتجات بعد",
       "continue_shopping": "متابعة التسوق",
       "subtotal": "المجموع الجزئي",
+      "total": "الإجمالي",
+      "final_total": "الإجمالي النهائي",
+      "summary": "ملخص الطلب",
+      "order_options_total": "إجمالي الخيارات",
+      "shipping_cost": "تكلفة الشحن",
+      "discount": "الخصم",
+      "VAT_tax_amount": "ضريبة القيمة المضافة",
       "free_shipping": "شحن مجاني",
+      "free_shipping_alert": "تبقى لك {amount} للحصول على شحن مجاني",
+      "has_free_shipping": "تهانينا! حصلت على شحن مجاني",
       "free_shipping_remaining": "أضف {amount} للحصول على شحن مجاني",
       "coupon_placeholder": "أدخل كود الخصم",
       "apply_coupon": "تطبيق الكوبون",
       "remove": "إزالة",
-      "quantity": "الكمية"
+      "quantity": "الكمية",
+      "out_of_stock": "نفد المخزون",
+      "reservations": "الحجوزات",
+      "item_options": "خيارات المنتج",
+      "gift_widget_title": "هل تريد إضافة هدية؟"
     },
     "order": {
       "can_edit_or_delete_your_review_within": "يمكنك تعديل أو حذف تقييمك خلال",
@@ -36,7 +61,33 @@
       "delete_period_ended": "تم انتهاء المدة المحددة لحذف التقييم",
       "days_since_added": "أيام من إضافته",
       "option_name": "الخيار",
-      "option_content": "المحتوى"
+      "option_content": "المحتوى",
+      "order_rating_title": "قيّم طلبك",
+      "order_rating_message": "شاركنا رأيك لنحسّن تجربتك",
+      "order_cancelation_desc": "هل أنت متأكد من رغبتك في إلغاء هذا الطلب؟"
+    },
+    "orders": {
+      "non_orders": "لا توجد طلبات بعد",
+      "date": "تاريخ الطلب",
+      "status": "حالة الطلب",
+      "total": "الإجمالي",
+      "branch": "الفرع",
+      "shipment_no": "رقم الشحنة",
+      "tracking_url": "رابط التتبع",
+      "gift_tag": "بطاقة هدية",
+      "print": "طباعة",
+      "print_order_details": "طباعة تفاصيل الطلب",
+      "to_order_invoice_contact_vendor": "للحصول على فاتورة الطلب تواصل مع المتجر",
+      "click_here": "اضغط هنا",
+      "pending_payment_expired": "انتهت مدة الدفع",
+      "your_order_is_under_review": "طلبك قيد المراجعة",
+      "finish_payment": "إتمام الدفع",
+      "reorder": "إعادة الطلب",
+      "reorder_description": "سيتم إضافة منتجات هذا الطلب إلى سلتك",
+      "reorder_confirmation": "هل تريد إعادة طلب هذه المنتجات؟",
+      "cancel": "إلغاء الطلب",
+      "cancel_confirmation": "هل أنت متأكد من رغبتك في إلغاء هذا الطلب؟",
+      "file_url": "رابط الملف"
     },
     "products": {
       "out_of_stock": "نفد المخزون",
@@ -47,7 +98,25 @@
       "donation_amount": "قيمة التبرع",
       "starting_price": "يبدأ من",
       "pre_order_now": "اطلب مسبقاً",
-      "comparison_limit": "لا يمكن مقارنة أكثر من 4 منتجات"
+      "comparison_limit": "لا يمكن مقارنة أكثر من 4 منتجات",
+      "weight": "الوزن",
+      "size_guides": "جدول المقاسات",
+      "show_size_guides": "عرض جدول المقاسات",
+      "attachments": "المرفقات",
+      "add_note": "إضافة ملاحظة",
+      "add_file": "إضافة ملف",
+      "notes_placeholder": "اكتب ملاحظتك هنا...",
+      "calories": "السعرات الحرارية",
+      "tax_included": "شامل الضريبة",
+      "read_more": "اقرأ أكثر",
+      "sold": "تم البيع",
+      "sku": "رمز المنتج",
+      "availability": "التوفر",
+      "select_branch": "اختر الفرع",
+      "price": "السعر",
+      "quantity": "الكمية",
+      "similar_products": "منتجات مشابهة",
+      "expected_to_be": "يُتوقع وصوله"
     },
     "product": {
       "description": "الوصف",
@@ -64,6 +133,64 @@
       "add_to_wishlist": "أضف للمفضلة",
       "remove_from_wishlist": "إزالة من المفضلة",
       "sticky_add_to_cart": "أضف إلى السلة"
+    },
+    "thank_you": {
+      "order_id": "رقم الطلب",
+      "order_details": "تفاصيل الطلب",
+      "email_sent": "تم إرسال تأكيد الطلب إلى بريدك الإلكتروني",
+      "resend_email": "إعادة إرسال البريد الإلكتروني"
+    },
+    "blog_categories": {
+      "categories": "تصنيفات المدونة",
+      "no_articles": "لا توجد مقالات في هذا التصنيف"
+    },
+    "blog_articles": {
+      "related": "مقالات ذات صلة"
+    },
+    "brands": {
+      "non_products": "لا توجد منتجات لهذه الماركة",
+      "non_brands": "لا توجد ماركات تجارية",
+      "try_again": "حاول مرة أخرى"
+    },
+    "categories": {
+      "sorting": "الترتيب حسب"
+    },
+    "testimonials": {
+      "sort_by_date_desc": "الأحدث أولاً",
+      "sort_by_date_asc": "الأقدم أولاً",
+      "sort_by_rating_desc": "أعلى تقييم",
+      "sort_by_rating_asc": "أقل تقييم"
+    },
+    "loyalty_program": {
+      "you_have": "لديك",
+      "point": "نقطة",
+      "exchange_points": "استبدال النقاط",
+      "ways_to_get_points": "طرق كسب النقاط",
+      "copy_link": "نسخ الرابط",
+      "completed": "مكتمل",
+      "free_product": "منتج مجاني"
+    },
+    "offer": {
+      "offer_finished": "انتهت هذه العرض",
+      "offer_expired_message": "عذراً، انتهت مدة هذا العرض",
+      "offer_remaining_time": "الوقت المتبقي",
+      "included_products": "المنتجات المشمولة"
+    },
+    "rating": {
+      "rate": "قيّم",
+      "pending": "في انتظار التقييم",
+      "rate_the_store": "قيّم المتجر",
+      "rate_shipping": "قيّم الشحن"
+    },
+    "profile": {
+      "first_name": "الاسم الأول",
+      "last_name": "اسم العائلة",
+      "birthday": "تاريخ الميلاد",
+      "birthday_placeholder": "يوم/شهر/سنة",
+      "gender": "الجنس",
+      "gender_placeholder": "اختر الجنس",
+      "male": "ذكر",
+      "female": "أنثى"
     }
   },
   "common": {
@@ -73,18 +200,52 @@
     "no_results": "لا توجد نتائج",
     "close": "إغلاق",
     "view_all": "عرض الكل",
-    "learn_more": "اعرف أكثر"
+    "learn_more": "اعرف أكثر",
+    "elements": {
+      "back_home": "العودة للرئيسية",
+      "cancel": "إلغاء",
+      "email": "البريد الإلكتروني",
+      "location": "الموقع",
+      "mobile": "رقم الجوال",
+      "note": "ملاحظة",
+      "ok": "موافق",
+      "save": "حفظ",
+      "warning": "تحذير",
+      "tax_number": "الرقم الضريبي"
+    },
+    "errors": {
+      "404": "الصفحة غير موجودة"
+    },
+    "titles": {
+      "home": "الرئيسية",
+      "support": "الدعم"
+    },
+    "uploader": {
+      "browse": "استعرض الملفات",
+      "choose_suitable_picture": "اختر صورة مناسبة",
+      "drag_and_drop": "اسحب وأفلت الملف هنا أو"
+    }
   },
   "home": {
     "hero_cta": "تسوق الآن",
     "featured_products": "منتجات مميزة",
     "new_arrivals": "وصل حديثاً",
     "shop_now": "تسوق الآن",
+    "learn_more": "اعرف أكثر",
+    "trust_secure": "دفع آمن",
+    "trust_shipping": "شحن سريع",
+    "trust_returns": "إرجاع سهل",
+    "trust_support": "دعم 24/7",
+    "newsletter_badge": "النشرة البريدية",
     "newsletter_title": "اشترك في نشرتنا البريدية",
     "newsletter_subtitle": "احصل على أحدث العروض والمنتجات مباشرة في بريدك",
     "newsletter_placeholder": "بريدك الإلكتروني",
     "newsletter_subscribe": "اشترك",
-    "newsletter_success": "تم الاشتراك بنجاح!"
+    "newsletter_success": "تم الاشتراك بنجاح!",
+    "newsletter_success_message": "شكراً لاشتراكك، ستصلك أحدث العروض قريباً",
+    "newsletter_privacy": "نحترم خصوصيتك",
+    "newsletter_no_spam": "لن نرسل لك رسائل غير مرغوب فيها",
+    "newsletter_unsubscribe": "يمكنك إلغاء الاشتراك في أي وقت"
   },
   "footer": {
     "quick_links": "روابط سريعة",
