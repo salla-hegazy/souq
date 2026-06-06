@@ -10,16 +10,16 @@
 <div class="container flex flex-col items-center justify-center min-h-[60vh] py-20 text-center">
 
     <div class="mb-8">
-        <span class="text-8xl font-black text-souq-primary opacity-20">{{ error.code ?? '404' }}</span>
+        <span class="text-8xl font-black text-primary opacity-20">{{ error.code ?? '404' }}</span>
     </div>
 
     <i class="sicon-search-find text-6xl text-gray-300 mb-6"></i>
 
-    <h1 class="text-2xl font-bold text-souq-text mb-3">
+    <h1 class="text-2xl font-bold text-gray-900 mb-3">
         {{ trans('common.errors.404') }}
     </h1>
 
-    <p class="text-souq-text-muted mb-8 max-w-md">
+    <p class="text-gray-500 mb-8 max-w-md">
         {{ error.message ?? trans('common.errors.404') }}
     </p>
 

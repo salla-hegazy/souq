@@ -1776,6 +1776,9 @@ input:where([type='file']):focus{
     border-color: rgba(191, 219, 254, 1);
     border-color: rgba(191, 219, 254, var(--tw-border-opacity, 1));
 }
+.border-blue-400\/60{
+    border-color: rgba(96, 165, 250, 0.6);
+}
 .border-gray-100{
     --tw-border-opacity: 1;
     border-color: rgba(243, 244, 246, 1);
@@ -1810,6 +1813,14 @@ input:where([type='file']):focus{
     background-color: rgba(0, 0, 0, 1);
     background-color: rgba(0, 0, 0, var(--tw-bg-opacity, 1));
 }
+.bg-blue-400{
+    --tw-bg-opacity: 1;
+    background-color: rgba(96, 165, 250, 1);
+    background-color: rgba(96, 165, 250, var(--tw-bg-opacity, 1));
+}
+.bg-blue-400\/10{
+    background-color: rgba(96, 165, 250, 0.1);
+}
 .bg-blue-50{
     --tw-bg-opacity: 1;
     background-color: rgba(239, 246, 255, 1);
@@ -1829,6 +1840,11 @@ input:where([type='file']):focus{
     --tw-bg-opacity: 1;
     background-color: rgba(249, 250, 251, 1);
     background-color: rgba(249, 250, 251, var(--tw-bg-opacity, 1));
+}
+.bg-gray-900{
+    --tw-bg-opacity: 1;
+    background-color: rgba(17, 24, 39, 1);
+    background-color: rgba(17, 24, 39, var(--tw-bg-opacity, 1));
 }
 .bg-green-50{
     --tw-bg-opacity: 1;
@@ -1866,6 +1882,24 @@ input:where([type='file']):focus{
 }
 .bg-gradient-to-t{
     background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+.from-black\/80{
+    --tw-gradient-from: rgba(0, 0, 0, 0.8) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-gray-900{
+    --tw-gradient-from: #111827 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgba(17, 24, 39, 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.via-black\/50{
+    --tw-gradient-to: rgba(0, 0, 0, 0)  var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(0, 0, 0, 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.via-gray-900\/90{
+    --tw-gradient-to: rgba(17, 24, 39, 0)  var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(17, 24, 39, 0.9) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 .via-transparent{
     --tw-gradient-to: rgba(0, 0, 0, 0)  var(--tw-gradient-to-position);
@@ -2216,6 +2250,11 @@ input:where([type='file']):focus{
     color: rgba(251, 191, 36, 1);
     color: rgba(251, 191, 36, var(--tw-text-opacity, 1));
 }
+.text-blue-400{
+    --tw-text-opacity: 1;
+    color: rgba(96, 165, 250, 1);
+    color: rgba(96, 165, 250, var(--tw-text-opacity, 1));
+}
 .text-blue-500{
     --tw-text-opacity: 1;
     color: rgba(59, 130, 246, 1);
@@ -2369,12 +2408,6 @@ input:where([type='file']):focus{
     --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
     box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
-}
-.shadow-\[0_0_32px_rgba\(37\2c 99\2c 235\2c 0\.4\)\]{
-    --tw-shadow: 0 0 32px rgba(37,99,235,0.4);
-    --tw-shadow-colored: 0 0 32px var(--tw-shadow-color);
-    box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 32px rgba(37,99,235,0.4);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
 }
 .shadow-default{
@@ -30679,11 +30712,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .target\:btn:target:hover{
     opacity: 0.8;
 }
-.hover\:-translate-y-0\.5:hover{
-    --tw-translate-y: -0.125rem;
-    transform: translate(var(--tw-translate-x), -0.125rem) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 .hover\:scale-110:hover{
     --tw-scale-x: 1.1;
     --tw-scale-y: 1.1;
@@ -30719,12 +30747,6 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 .hover\:opacity-90:hover{
     opacity: 0.9;
 }
-.hover\:shadow-\[0_0_48px_rgba\(37\2c 99\2c 235\2c 0\.6\)\]:hover{
-    --tw-shadow: 0 0 48px rgba(37,99,235,0.6);
-    --tw-shadow-colored: 0 0 48px var(--tw-shadow-color);
-    box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 48px rgba(37,99,235,0.6);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
-}
 .hover\:shadow-default:hover{
     --tw-shadow: 5px 10px 30px #2B2D340D;;
     --tw-shadow-colored: 5px 10px 30px var(--tw-shadow-color);
@@ -30755,6 +30777,9 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
 }
 .focus\:ring-inset:focus{
     --tw-ring-inset: inset;
+}
+.focus\:ring-primary:focus{
+    --tw-ring-color: var(--color-primary);
 }
 .focus\:ring-offset-2:focus{
     --tw-ring-offset-width: 2px;

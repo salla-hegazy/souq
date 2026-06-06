@@ -4,7 +4,7 @@
 #}
 {% if theme.settings.get('sticky_add_to_cart', true) %}
 <div id="sticky-atc-bar" class="sticky-atc fixed bottom-0 inset-x-0 z-[200] translate-y-full transition-transform duration-300
-     bg-white border-t border-souq-border shadow-lg py-3 px-4">
+     bg-white border-t border-gray-200 shadow-lg py-3 px-4">
   <div class="container flex items-center justify-between gap-4">
 
     <div class="flex items-center gap-3 min-w-0">
@@ -13,8 +13,8 @@
              class="w-12 h-12 rounded-lg object-cover flex-shrink-0" loading="lazy">
       {% endif %}
       <div class="min-w-0">
-        <p class="font-medium text-souq-text text-sm truncate">{{ product.name }}</p>
-        <p class="text-souq-primary font-bold text-sm">{{ product.price | money }}</p>
+        <p class="font-medium text-gray-900 text-sm truncate">{{ product.name }}</p>
+        <p class="text-primary font-bold text-sm">{{ product.price | money }}</p>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
       product-id="{{ product.id }}"
       product-status="{{ product.status }}"
       product-type="{{ product.type }}"
-      class="flex-shrink-0 rounded-full px-6 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-souq-primary focus:ring-offset-2">
+      class="flex-shrink-0 rounded-full px-6 py-2.5 text-sm font-semibold focus:ring-2 focus:ring-primary focus:ring-offset-2">
     </salla-add-product-button>
 
   </div>

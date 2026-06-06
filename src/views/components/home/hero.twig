@@ -1,6 +1,5 @@
 {#
  Hero banner — SOUQ
- GSAP selectors: .hero__bg-image .hero__eyebrow .hero__heading .hero__subtext .hero__cta-btn .hero__trust-bar
 #}
 {% set hero_title    = theme.settings.get('hero_title', store.name) %}
 {% set hero_subtitle = theme.settings.get('hero_subtitle', store.slogan) %}
@@ -8,32 +7,31 @@
 {% set hero_cta_text = theme.settings.get('hero_cta_text', trans('home.hero_cta')) %}
 {% set hero_image    = theme.settings.get('hero_image') %}
 
-<section class="hero-souq relative overflow-hidden min-h-[500px] md:min-h-[600px] lg:min-h-[700px] flex items-center bg-souq-secondary">
+<section class="hero-souq relative overflow-hidden min-h-[500px] md:min-h-[600px] lg:min-h-[700px] flex items-center bg-gray-900">
 
   {% if hero_image %}
     <div class="hero__bg-image absolute inset-0 will-change-transform">
       <img src="{{ hero_image }}" alt="{{ hero_title }}"
            class="w-full h-full object-cover"
            loading="eager" fetchpriority="high">
-      <div class="absolute inset-0 bg-gradient-to-e from-souq-secondary/80 via-souq-secondary/50 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-e from-black/80 via-black/50 to-transparent"></div>
     </div>
   {% else %}
-    <div class="hero__bg-image absolute inset-0 bg-gradient-to-br from-souq-secondary via-souq-secondary/90 to-souq-primary/20"></div>
+    <div class="hero__bg-image absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900/90 to-primary/20"></div>
   {% endif %}
 
-  {# Decorative blurred circles #}
-  <div class="pointer-events-none absolute -top-32 -start-32 w-96 h-96 rounded-full bg-souq-primary/10 blur-3xl"></div>
-  <div class="pointer-events-none absolute -bottom-24 -end-24 w-80 h-80 rounded-full bg-souq-accent/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute -top-32 -start-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-24 -end-24 w-80 h-80 rounded-full bg-blue-400/10 blur-3xl"></div>
 
   <div class="container relative z-10 py-24 md:py-32">
     <div class="max-w-xl">
 
       {% if theme.settings.get('hero_eyebrow') %}
         <div class="hero__eyebrow mb-5">
-          <div class="badge badge-outline border-souq-accent text-souq-accent gap-2 px-4 py-3 text-sm font-medium tracking-wider uppercase">
-            <span class="inline-block w-1.5 h-1.5 rounded-full bg-souq-accent animate-pulse"></span>
+          <span class="inline-flex items-center gap-2 border border-blue-400/60 text-blue-400 px-4 py-2 text-sm font-medium tracking-wider uppercase rounded-full">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
             {{ theme.settings.get('hero_eyebrow') }}
-          </div>
+          </span>
         </div>
       {% endif %}
 
@@ -49,13 +47,13 @@
 
       <div class="hero__cta-btn flex flex-wrap items-center gap-4">
         <a href="{{ hero_cta_url }}"
-           class="btn btn-primary btn-lg rounded-full px-8 font-semibold shadow-[0_0_32px_rgba(37,99,235,0.4)] hover:shadow-[0_0_48px_rgba(37,99,235,0.6)] transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-souq-primary focus:ring-offset-2 focus:ring-offset-souq-secondary">
+           class="btn btn--primary rounded-full px-8">
           {{ hero_cta_text }}
           <i class="sicon-arrow-{{ theme.is_rtl ? 'left' : 'right' }} text-sm"></i>
         </a>
         {% if theme.settings.get('hero_secondary_cta_url') %}
           <a href="{{ theme.settings.get('hero_secondary_cta_url') }}"
-             class="btn btn-ghost btn-lg rounded-full px-8 text-white border-white/30 hover:bg-white/10 font-medium">
+             class="btn btn--outline rounded-full px-8 text-white border-white/30 hover:bg-white/10 font-medium">
             {{ theme.settings.get('hero_secondary_cta_text', trans('home.learn_more') ?? 'اعرف أكثر') }}
           </a>
         {% endif %}
@@ -69,25 +67,25 @@
       <div class="container py-4 flex flex-wrap justify-center gap-x-8 gap-y-2 text-white/85 text-sm">
         <span class="flex items-center gap-2">
           <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
-            <i class="sicon-shield-check text-souq-accent"></i>
+            <i class="sicon-shield-check text-blue-400"></i>
           </span>
           {{ trans('home.trust_secure') ?? 'دفع آمن' }}
         </span>
         <span class="flex items-center gap-2">
           <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
-            <i class="sicon-truck text-souq-accent"></i>
+            <i class="sicon-truck text-blue-400"></i>
           </span>
           {{ trans('home.trust_shipping') ?? 'شحن سريع' }}
         </span>
         <span class="flex items-center gap-2">
           <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
-            <i class="sicon-refresh text-souq-accent"></i>
+            <i class="sicon-refresh text-blue-400"></i>
           </span>
           {{ trans('home.trust_returns') ?? 'إرجاع مجاني' }}
         </span>
         <span class="flex items-center gap-2">
           <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
-            <i class="sicon-headphones text-souq-accent"></i>
+            <i class="sicon-headphones text-blue-400"></i>
           </span>
           {{ trans('home.trust_support') ?? 'دعم 24/7' }}
         </span>
