@@ -1,0 +1,13 @@
+{# Announcement bar — dismissible, Alpine-powered #}
+{% set msg = theme.settings.get('announcement_text') %}
+{% if msg %}
+<div x-data="{ show: true }" x-show="show" x-cloak
+     class="announcement-bar bg-souq-primary text-white text-center py-2 px-4 text-sm relative">
+  <span>{{ msg }}</span>
+  <button @click="show = false"
+          class="absolute end-3 top-1/2 -translate-y-1/2 opacity-70 hover:opacity-100 transition-opacity"
+          aria-label="{{ trans('common.close') }}">
+    <i class="sicon-times text-xs"></i>
+  </button>
+</div>
+{% endif %}

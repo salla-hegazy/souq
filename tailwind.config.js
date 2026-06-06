@@ -34,7 +34,18 @@ module.exports = {
                 'dark'         : '#1D1F1F',
                 'darker'       : '#0E0F0F',
                 'danger'       : '#AE0A0A',
-                'primary-dark' : 'var(--color-primary-dark)'
+                'primary-dark' : 'var(--color-primary-dark)',
+                // SOUQ semantic tokens
+                'souq-primary'      : 'var(--souq-primary)',
+                'souq-secondary'    : 'var(--souq-secondary)',
+                'souq-accent'       : 'var(--souq-accent)',
+                'souq-success'      : 'var(--souq-success)',
+                'souq-warning'      : 'var(--souq-warning)',
+                'souq-error'        : 'var(--souq-error)',
+                'souq-bg'           : 'var(--souq-bg)',
+                'souq-surface'      : 'var(--souq-surface)',
+                'souq-text'         : 'var(--souq-text)',
+                'souq-text-muted'   : 'var(--souq-text-muted)',
             },
             spacing: {
               '3.75': '15px',

@@ -1,0 +1,61 @@
+{#
+ Product image gallery — thumbnail tabs + zoom + video support
+ Relies on fslightbox (already in CLI scaffold) for zoom.
+#}
+{% set images = product.images ?? [{ url: product.image.url, alt: product.image.alt, type: 'image' }] %}
+
+<div class="product-gallery"
+     x-data="{ active: 0, images: {{ images | json_encode }} }">
+
+  {# Main image #}
+  <div class="product-gallery__main relative rounded-xl overflow-hidden bg-souq-bg aspect-square mb-3">
+    <template x-for="(img, i) in images" :key="i">
+      <div x-show="active === i" class="w-full h-full">
+        <template x-if="img.type !== 'video'">
+          <a :href="img.url" data-fslightbox="product-gallery">
+            <img :src="img.url"
+                 :alt="img.alt || '{{ product.name }}'"
+                 class="w-full h-full object-contain cursor-zoom-in"
+                 loading="eager"
+                 fetchpriority="high">
+          </a>
+        </template>
+        <template x-if="img.type === 'video'">
+          <div class="w-full h-full flex items-center justify-center">
+            <lite-youtube :videoid="img.video_url" class="w-full h-full"></lite-youtube>
+          </div>
+        </template>
+      </div>
+    </template>
+
+    {# Arrow navigation (multiple images) #}
+    <template x-if="images.length > 1">
+      <div>
+        <button @click="active = (active - 1 + images.length) % images.length"
+                class="product-gallery__arrow absolute start-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white rounded-full shadow flex items-center justify-center transition focus:outline-none focus:ring-2 focus:ring-souq-primary min-h-[44px] min-w-[44px]"
+                aria-label="{{ trans('common.close') }}">
+          <i class="sicon-arrow-{{ theme.is_rtl ? 'right' : 'left' }} text-sm text-souq-text"></i>
+        </button>
+        <button @click="active = (active + 1) % images.length"
+                class="product-gallery__arrow absolute end-2 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/80 hover:bg-white rounded-full shadow flex items-center justify-center transition focus:outline-none focus:ring-2 focus:ring-souq-primary min-h-[44px] min-w-[44px]"
+                aria-label="{{ trans('common.close') }}">
+          <i class="sicon-arrow-{{ theme.is_rtl ? 'left' : 'right' }} text-sm text-souq-text"></i>
+        </button>
+      </div>
+    </template>
+  </div>
+
+  {# Thumbnails #}
+  <template x-if="images.length > 1">
+    <div class="product-gallery__thumbs flex gap-2 overflow-x-auto pb-1">
+      <template x-for="(img, i) in images" :key="i">
+        <button @click="active = i"
+                :class="active === i ? 'ring-2 ring-souq-primary' : 'ring-1 ring-souq-border hover:ring-souq-primary'"
+                class="product-gallery__thumb w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden transition focus:outline-none focus:ring-2 focus:ring-souq-primary min-h-[44px] min-w-[44px]">
+          <img :src="img.url" :alt="img.alt" class="w-full h-full object-cover" loading="lazy">
+        </button>
+      </template>
+    </div>
+  </template>
+
+</div>

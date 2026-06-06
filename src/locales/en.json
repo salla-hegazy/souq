@@ -1,7 +1,13 @@
 {
   "blocks": {
     "header": {
-      "cart": "Cart"
+      "cart": "Cart",
+      "search": "Search",
+      "wishlist": "Wishlist",
+      "account": "Account",
+      "main_menu": "Main Menu",
+      "cart_count": "Cart ({count} items)",
+      "close_menu": "Close menu"
     },
     "appBanner": {
       "download_now": "download now"
@@ -9,7 +15,20 @@
   },
   "pages": {
     "cart": {
-      "cart_options": "Cart Options"
+      "cart_options": "Cart Options",
+      "add_to_cart": "Add to Cart",
+      "book_now": "Book Now",
+      "checkout": "Checkout",
+      "empty_cart": "Your cart is empty",
+      "empty_cart_sub": "You haven't added any products yet",
+      "continue_shopping": "Continue Shopping",
+      "subtotal": "Subtotal",
+      "free_shipping": "Free Shipping",
+      "free_shipping_remaining": "Add {amount} for free shipping",
+      "coupon_placeholder": "Enter discount code",
+      "apply_coupon": "Apply Coupon",
+      "remove": "Remove",
+      "quantity": "Quantity"
     },
     "order": {
       "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
@@ -18,10 +37,61 @@
       "days_since_added": "days since it was added",
       "option_name": "Option name",
       "option_content": "Content"
+    },
+    "products": {
+      "out_of_stock": "Out of Stock",
+      "notify_me": "Notify me when available",
+      "sale_badge": "Sale",
+      "new_badge": "New",
+      "remained": "remaining",
+      "donation_amount": "Donation amount",
+      "starting_price": "Starting from",
+      "pre_order_now": "Pre-order Now",
+      "comparison_limit": "Cannot compare more than 4 products"
+    },
+    "product": {
+      "description": "Description",
+      "specifications": "Specifications",
+      "reviews": "Reviews",
+      "shipping": "Shipping",
+      "size_guide": "Size Guide",
+      "share": "Share",
+      "sku": "SKU",
+      "availability": "Availability",
+      "in_stock": "In Stock",
+      "low_stock": "Limited stock ({count} left)",
+      "select_options": "Select options",
+      "add_to_wishlist": "Add to wishlist",
+      "remove_from_wishlist": "Remove from wishlist",
+      "sticky_add_to_cart": "Add to Cart"
     }
   },
   "common": {
     "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
-    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount"
+    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount",
+    "loading": "Loading...",
+    "no_results": "No results found",
+    "close": "Close",
+    "view_all": "View All",
+    "learn_more": "Learn More"
+  },
+  "home": {
+    "hero_cta": "Shop Now",
+    "featured_products": "Featured Products",
+    "new_arrivals": "New Arrivals",
+    "shop_now": "Shop Now",
+    "newsletter_title": "Subscribe to our newsletter",
+    "newsletter_subtitle": "Get the latest deals and products delivered to your inbox",
+    "newsletter_placeholder": "Your email address",
+    "newsletter_subscribe": "Subscribe",
+    "newsletter_success": "Successfully subscribed!"
+  },
+  "footer": {
+    "quick_links": "Quick Links",
+    "contact_us": "Contact Us",
+    "follow_us": "Follow Us",
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
   }
 }

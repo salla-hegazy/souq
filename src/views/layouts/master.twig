@@ -105,9 +105,11 @@
     <a href="https://www.enable-javascript.com/" rel="noreferrer"
        target="_blank">To enable JavaScript on webpage</a>.
 </noscript>
-<div class="app-inner flex flex-col min-h-full">
+<div class="app-inner flex flex-col min-h-full" x-data>
     {% hook 'body:start' %}
     {% component 'header.header' %}
+    {# SOUQ cart drawer — globally available on all pages #}
+    {% include 'components/cart/cart-drawer.twig' %}
     <main id="main-content" role="main"{{ (page.slug == 'product.single' or page.slug starts with 'product.index') ? ' class="flex flex-col space-y-8 sm:space-y-16"' : '' }}>
     {% block content %}{% endblock %}
     </main>
@@ -127,5 +129,9 @@
     <salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
 {% endif %}
 {% block scripts %}{% endblock %}
+
+{# GSAP + ScrollTrigger — loaded after app.js so animations register after DOM ready #}
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 </body>
 </html>

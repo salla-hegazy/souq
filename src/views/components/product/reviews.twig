@@ -1,0 +1,59 @@
+{#
+ Product detail tabs: description / specifications / reviews / shipping
+ Uses Alpine for tab switching; salla-reviews web component for actual reviews.
+#}
+<div class="product-tabs"
+     x-data="{ tab: 'description' }">
+
+  {# Tab headers #}
+  <div class="flex border-b border-souq-border overflow-x-auto" role="tablist">
+    {% for t in ['description', 'specifications', 'reviews', 'shipping'] %}
+      {% set label = trans('pages.product.' ~ t) %}
+      {% if (t == 'specifications' and product.specification) or
+            (t == 'description' and product.description) or
+            t == 'reviews' or t == 'shipping' %}
+        <button role="tab"
+                :aria-selected="tab === '{{ t }}'"
+                @click="tab = '{{ t }}'"
+                :class="tab === '{{ t }}' ? 'border-b-2 border-souq-primary text-souq-primary' : 'text-souq-text-muted hover:text-souq-text'"
+                class="px-5 py-3 text-sm font-medium whitespace-nowrap transition-colors focus:outline-none focus:ring-2 focus:ring-souq-primary focus:ring-inset">
+          {{ label }}
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {# Description #}
+  {% if product.description %}
+    <div x-show="tab === 'description'" class="product-tabs__panel py-6 prose max-w-none text-souq-text">
+      {{ product.description | raw }}
+    </div>
+  {% endif %}
+
+  {# Specifications #}
+  {% if product.specification %}
+    <div x-show="tab === 'specifications'" x-cloak class="product-tabs__panel py-6">
+      <table class="w-full text-sm">
+        <tbody>
+          {% for spec in product.specification %}
+            <tr class="border-b border-souq-border">
+              <th class="py-2 pe-4 text-start font-medium text-souq-text-muted w-1/3">{{ spec.name }}</th>
+              <td class="py-2 text-souq-text">{{ spec.value }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+
+  {# Reviews #}
+  <div x-show="tab === 'reviews'" x-cloak class="product-tabs__panel py-6">
+    <salla-reviews product-id="{{ product.id }}"></salla-reviews>
+  </div>
+
+  {# Shipping #}
+  <div x-show="tab === 'shipping'" x-cloak class="product-tabs__panel py-6 text-souq-text text-sm leading-relaxed">
+    <salla-shipping-estimate product-id="{{ product.id }}"></salla-shipping-estimate>
+  </div>
+
+</div>

@@ -1,7 +1,13 @@
 {
   "blocks": {
     "header": {
-      "cart": "السلة"
+      "cart": "السلة",
+      "search": "البحث",
+      "wishlist": "المفضلة",
+      "account": "الحساب",
+      "main_menu": "القائمة الرئيسية",
+      "cart_count": "السلة ({count} منتج)",
+      "close_menu": "إغلاق القائمة"
     },
     "appBanner": {
       "download_now": "حمله الان"
@@ -9,7 +15,20 @@
   },
   "pages": {
     "cart": {
-      "cart_options": "خيارات السلة"
+      "cart_options": "خيارات السلة",
+      "add_to_cart": "أضف إلى السلة",
+      "book_now": "احجز الآن",
+      "checkout": "إتمام الشراء",
+      "empty_cart": "سلتك فارغة",
+      "empty_cart_sub": "لم تقم بإضافة أي منتجات بعد",
+      "continue_shopping": "متابعة التسوق",
+      "subtotal": "المجموع الجزئي",
+      "free_shipping": "شحن مجاني",
+      "free_shipping_remaining": "أضف {amount} للحصول على شحن مجاني",
+      "coupon_placeholder": "أدخل كود الخصم",
+      "apply_coupon": "تطبيق الكوبون",
+      "remove": "إزالة",
+      "quantity": "الكمية"
     },
     "order": {
       "can_edit_or_delete_your_review_within": "يمكنك تعديل أو حذف تقييمك خلال",
@@ -18,10 +37,61 @@
       "days_since_added": "أيام من إضافته",
       "option_name": "الخيار",
       "option_content": "المحتوى"
+    },
+    "products": {
+      "out_of_stock": "نفد المخزون",
+      "notify_me": "أعلمني عند التوفر",
+      "sale_badge": "تخفيض",
+      "new_badge": "جديد",
+      "remained": "متبقي",
+      "donation_amount": "قيمة التبرع",
+      "starting_price": "يبدأ من",
+      "pre_order_now": "اطلب مسبقاً",
+      "comparison_limit": "لا يمكن مقارنة أكثر من 4 منتجات"
+    },
+    "product": {
+      "description": "الوصف",
+      "specifications": "المواصفات",
+      "reviews": "التقييمات",
+      "shipping": "الشحن",
+      "size_guide": "دليل المقاسات",
+      "share": "مشاركة",
+      "sku": "رمز المنتج",
+      "availability": "التوفر",
+      "in_stock": "متوفر",
+      "low_stock": "كمية محدودة ({count} قطعة)",
+      "select_options": "اختر الخصائص",
+      "add_to_wishlist": "أضف للمفضلة",
+      "remove_from_wishlist": "إزالة من المفضلة",
+      "sticky_add_to_cart": "أضف إلى السلة"
     }
   },
   "common": {
     "bank_offer_sub_title_multiple": "ادفع قيمة مشترياتك عبر أحد البطاقات البنكة التالية واحصل على الخصم المحدد",
-    "bank_offer_sub_title_single": "ادفع قيمة مشترياتك عبر أحد بطاقات بنك :bank_name واحصل على خصم بنسبة "
+    "bank_offer_sub_title_single": "ادفع قيمة مشترياتك عبر أحد بطاقات بنك :bank_name واحصل على خصم بنسبة ",
+    "loading": "جارٍ التحميل...",
+    "no_results": "لا توجد نتائج",
+    "close": "إغلاق",
+    "view_all": "عرض الكل",
+    "learn_more": "اعرف أكثر"
+  },
+  "home": {
+    "hero_cta": "تسوق الآن",
+    "featured_products": "منتجات مميزة",
+    "new_arrivals": "وصل حديثاً",
+    "shop_now": "تسوق الآن",
+    "newsletter_title": "اشترك في نشرتنا البريدية",
+    "newsletter_subtitle": "احصل على أحدث العروض والمنتجات مباشرة في بريدك",
+    "newsletter_placeholder": "بريدك الإلكتروني",
+    "newsletter_subscribe": "اشترك",
+    "newsletter_success": "تم الاشتراك بنجاح!"
+  },
+  "footer": {
+    "quick_links": "روابط سريعة",
+    "contact_us": "تواصل معنا",
+    "follow_us": "تابعنا",
+    "rights": "جميع الحقوق محفوظة",
+    "privacy": "سياسة الخصوصية",
+    "terms": "الشروط والأحكام"
   }
 }

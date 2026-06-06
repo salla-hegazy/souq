@@ -1,0 +1,9 @@
+{#
+ Variant / options picker — delegates to <salla-product-options> web component
+ which handles all option types (color swatches, sizes, etc.)
+#}
+{% if product.type != 'donating' %}
+<div class="variant-picker mb-6">
+  <salla-product-options product-id="{{ product.id }}"></salla-product-options>
+</div>
+{% endif %}

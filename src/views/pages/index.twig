@@ -1,14 +1,32 @@
 {#
-| Variable         | Type       | Description                                                         |
-|------------------|------------|---------------------------------------------------------------------|
-| page             | object     |                                                                     |
-| page.title       | string     | *could be html                                                      |
-| page.slug        | string     | ex: "cat.show"                                                      |
+| Variable         | Type       | Description
+|------------------|------------|----------------------------------------------------------------------
+| page             | object     |
+| page.title       | string     | *could be html
+| page.slug        | string     | ex: "index"
 #}
 {% extends "layouts.master" %}
+
 {% block content %}
-    {% component home %}
+
+  {# Announcement bar — dismissible promo text from theme settings #}
+  {% include 'components/home/announcement-bar.twig' %}
+
+  {# SOUQ hero — enabled via theme settings #}
+  {% if theme.settings.get('show_hero', true) %}
+    {% include 'components/home/hero.twig' %}
+  {% endif %}
+
+  {# All merchant-configured home blocks (sliders, featured products, etc.) #}
+  {% component home %}
+
+  {# Newsletter — at bottom, before footer #}
+  {% if theme.settings.get('show_newsletter', true) %}
+    {% include 'components/home/newsletter.twig' %}
+  {% endif %}
+
 {% endblock %}
+
 {% block scripts %}
-    <script defer src="{{ 'home.js' | asset }}"></script>
+  <script defer src="{{ 'home.js' | asset }}"></script>
 {% endblock %}

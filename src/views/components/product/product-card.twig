@@ -1,0 +1,92 @@
+{#
+ SOUQ product-card.twig
+ Usage: {% include 'components/product/product-card.twig' with { product: product } %}
+ Variables use the Salla Twilight standard: product.image.url, product.is_on_sale, product.status, etc.
+ GSAP hovers are wired to .product-card__img by GsapAnimator.animateProductCards()
+#}
+{% set is_available = product.status == 'sale' %}
+{% set has_sale     = product.is_on_sale and product.regular_price and product.regular_price > product.price %}
+{% set discount_pct = has_sale ? ((product.regular_price - product.price) / product.regular_price * 100)|round : 0 %}
+
+<article class="product-card group relative bg-souq-surface rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+
+  {# Image #}
+  <div class="product-card__img-wrap relative overflow-hidden aspect-square bg-souq-bg">
+    <a href="{{ product.url }}" class="block w-full h-full"
+       aria-label="{{ product.name }}">
+      <img src="{{ product.image.url }}"
+           alt="{{ product.image.alt ?? product.name }}"
+           class="product-card__img w-full h-full object-cover will-change-transform"
+           loading="lazy"
+           width="400" height="400">
+    </a>
+
+    {# Badges #}
+    <div class="absolute top-2 start-2 flex flex-col gap-1">
+      {% if has_sale %}
+        <span class="badge bg-souq-error text-white text-xs font-bold px-2 py-1 rounded">-{{ discount_pct }}%</span>
+      {% endif %}
+      {% if product.promotion_title %}
+        <span class="badge bg-souq-primary text-white text-xs px-2 py-1 rounded">{{ product.promotion_title }}</span>
+      {% endif %}
+    </div>
+
+    {# Wishlist button #}
+    <button onclick="salla.wishlist.toggle({{ product.id }})"
+            :class="$store.wishlist.has({{ product.id }}) ? 'text-red-500' : 'text-souq-text-muted'"
+            class="product-card__wishlist absolute top-2 end-2 w-9 h-9 flex items-center justify-center bg-white rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-souq-primary focus:ring-offset-2 min-h-[44px] min-w-[44px]"
+            aria-label="{{ trans('pages.product.add_to_wishlist') }}">
+      <i class="sicon-heart text-base"></i>
+    </button>
+
+    {# Out of stock overlay #}
+    {% if not is_available %}
+      <div class="absolute inset-0 bg-white/60 flex items-center justify-center">
+        <span class="text-sm font-medium text-souq-text-muted bg-white px-3 py-1 rounded-full shadow-sm">
+          {{ trans('pages.products.out_of_stock') }}
+        </span>
+      </div>
+    {% endif %}
+  </div>
+
+  {# Content #}
+  <div class="product-card__body p-4">
+
+    {# Rating #}
+    {% if product.rating and product.rating.stars %}
+      <div class="flex items-center gap-1 mb-1">
+        <salla-rating-stars product-id="{{ product.id }}" class="text-xs"></salla-rating-stars>
+        <span class="text-xs text-souq-text-muted">({{ product.rating.count }})</span>
+      </div>
+    {% endif %}
+
+    <h3 class="product-card__name text-sm font-semibold text-souq-text leading-snug mb-2 line-clamp-2">
+      <a href="{{ product.url }}" class="hover:text-souq-primary transition-colors">{{ product.name }}</a>
+    </h3>
+
+    {# Price #}
+    <div class="product-card__price flex items-baseline gap-2 mb-3">
+      {% if has_sale %}
+        <span class="text-base font-bold text-souq-primary">{{ product.price | money }}</span>
+        <span class="text-sm text-souq-text-muted line-through">{{ product.regular_price | money }}</span>
+      {% else %}
+        <span class="text-base font-bold text-souq-text">{{ product.price | money }}</span>
+      {% endif %}
+    </div>
+
+    {# Add to cart #}
+    <salla-add-product-button
+      fill="outline"
+      width="wide"
+      product-id="{{ product.id }}"
+      product-status="{{ product.status }}"
+      product-type="{{ product.type }}"
+      class="w-full rounded-lg text-sm font-medium focus:ring-2 focus:ring-souq-primary focus:ring-offset-2">
+      {% if is_available %}
+        <i class="sicon-shopping-bag text-sm me-1"></i>
+      {% endif %}
+    </salla-add-product-button>
+
+  </div>
+
+</article>

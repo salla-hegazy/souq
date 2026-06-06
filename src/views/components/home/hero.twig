@@ -1,0 +1,58 @@
+{#
+ Hero banner — SOUQ
+ GSAP selectors: .hero__bg-image .hero__eyebrow .hero__heading .hero__subtext .hero__cta-btn .hero__trust-bar
+#}
+{% set hero_title    = theme.settings.get('hero_title', store.name) %}
+{% set hero_subtitle = theme.settings.get('hero_subtitle', store.slogan) %}
+{% set hero_cta_url  = theme.settings.get('hero_cta_url', store.url) %}
+{% set hero_cta_text = theme.settings.get('hero_cta_text', trans('home.hero_cta')) %}
+{% set hero_image    = theme.settings.get('hero_image') %}
+
+<section class="hero relative overflow-hidden min-h-[480px] md:min-h-[580px] lg:min-h-[680px] flex items-center bg-souq-bg">
+
+  {% if hero_image %}
+    <div class="hero__bg-image absolute inset-0 will-change-transform">
+      <img src="{{ hero_image }}" alt="{{ hero_title }}" class="w-full h-full object-cover" loading="eager" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-e from-souq-secondary/70 to-transparent"></div>
+    </div>
+  {% endif %}
+
+  <div class="container relative z-10 py-20 md:py-28">
+    <div class="max-w-lg">
+
+      {% if theme.settings.get('hero_eyebrow') %}
+        <p class="hero__eyebrow inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-souq-accent mb-4">
+          {{ theme.settings.get('hero_eyebrow') }}
+        </p>
+      {% endif %}
+
+      <h1 class="hero__heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+        {{ hero_title }}
+      </h1>
+
+      {% if hero_subtitle %}
+        <p class="hero__subtext text-lg text-white/80 mb-8 leading-relaxed">{{ hero_subtitle }}</p>
+      {% endif %}
+
+      <div class="hero__cta-btn flex flex-wrap gap-3">
+        <a href="{{ hero_cta_url }}"
+           class="btn btn-primary rounded-full px-8 py-3 text-base font-semibold shadow-[0_0_24px_rgba(37,99,235,0.35)] hover:shadow-[0_0_32px_rgba(37,99,235,0.5)] transition-shadow focus:outline-none focus:ring-2 focus:ring-souq-primary focus:ring-offset-2">
+          {{ hero_cta_text }}
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  {% if theme.settings.get('hero_trust_icons', true) %}
+    <div class="hero__trust-bar absolute bottom-0 inset-x-0 bg-white/10 backdrop-blur-sm border-t border-white/20">
+      <div class="container py-3 flex flex-wrap justify-center gap-6 text-white/90 text-sm">
+        <span class="flex items-center gap-1.5"><i class="sicon-shield-check"></i> {{ trans('home.trust_secure') ?? 'دفع آمن' }}</span>
+        <span class="flex items-center gap-1.5"><i class="sicon-truck"></i> {{ trans('home.trust_shipping') ?? 'شحن سريع' }}</span>
+        <span class="flex items-center gap-1.5"><i class="sicon-refresh"></i> {{ trans('home.trust_returns') ?? 'إرجاع مجاني' }}</span>
+        <span class="flex items-center gap-1.5"><i class="sicon-headphones"></i> {{ trans('home.trust_support') ?? 'دعم 24/7' }}</span>
+      </div>
+    </div>
+  {% endif %}
+
+</section>
