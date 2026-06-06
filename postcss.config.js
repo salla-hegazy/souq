@@ -5,7 +5,7 @@ module.exports = {
     'tailwindcss/nesting': 'postcss-nesting',
     tailwindcss: {},
     'postcss-preset-env': {
-      features: { 'nesting-rules': true },
+      features: { 'nesting-rules': true, 'is-pseudo-class': false },
     },
   }
 }

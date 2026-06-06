@@ -56,7 +56,7 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {loader: "css-loader", options: {url: false}},
                     "postcss-loader",
-                    "sass-loader",
+                    { loader: "sass-loader", options: { sassOptions: { silenceDeprecations: ['import'] } } },
                 ]
             },
         ],
