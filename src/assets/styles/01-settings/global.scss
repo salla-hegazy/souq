@@ -20,9 +20,8 @@ $main-text-color: var(--main-text-color);
   --color-grey: #f5f7f9;
   --color-light-grey: #eeeeee;
   /* font-size */
-  --font-sm: 0.8685714286rem;
-  /* font-family: ; */
-  --font-main: "DINNextLTArabic";
+  --font-sm: 0.875rem;
+  --font-main: "Cairo", "DINNextLTArabic", system-ui, sans-serif;
 
   /* plugins */
   --mm-ocd-width: calc(100% - 51px);

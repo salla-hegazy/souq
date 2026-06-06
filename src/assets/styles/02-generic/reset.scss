@@ -1,9 +1,10 @@
 body {
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 1.65;
   color: var(--main-text-color);
   position: relative;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // p {
@@ -30,8 +31,9 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-weight: 600;
-  margin-bottom: 0px;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 1.25;
 }
 
 a {
@@ -57,32 +59,33 @@ li {
 
 
 h1 {
-  @apply text-3xl;
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  letter-spacing: -0.025em;
 }
 
 h2 {
-  @apply text-xl;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
 }
 
 h3 {
-  @apply text-xl;
-  line-height: 38px;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  letter-spacing: -0.015em;
 }
 
-// h4 {
-//   font-size: 22px;
-//   line-height: 32px;
-// }
+h4 {
+  font-size: 1.25rem;
+}
 
-// h5 {
-//   font-size: 16px;
-//   line-height: 24px;
-// }
+h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
 
-// h6 {
-//   font-size: 14px;
-//   line-height: 26px;
-// }
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
 
 .f-color {
   color: #FF6767;

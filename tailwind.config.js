@@ -18,8 +18,10 @@ module.exports = {
         fontFamily: {
             sans: [
                 'var(--font-main)',
+                'Cairo',
                 '-apple-system',
                 'BlinkMacSystemFont',
+                'sans-serif',
             ],
             primary: "var(--font-main)"
         },
