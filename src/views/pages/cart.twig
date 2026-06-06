@@ -135,7 +135,7 @@
                                     </div>
                                 </div>
 
-                                {% include 'pages.partials.product.options' with {product:item} %}
+                                {% include 'components.product.options' with {product:item} %}
                             <span class="absolute top-1.5 rtl:left-1.5 ltr:right-1.5 rtl:xs:left-5 ltr:xs:right-5 xs:top-5">
                                 <salla-button type="button" shape="icon" size="small" color="danger" class="btn--delete" aria-label="Remove from the cart"
                                         onclick="salla.cart.deleteItem('{{ item.id }}').then(() => document.querySelector('#item-{{ item.id }}').remove())">
@@ -159,7 +159,7 @@
                       <form class="first:pt-5 relative" onchange="salla.form.onChange('cart.updateItem', event)" id="item-{{ product_option.id }}">
                         <input type="hidden" name="id" value="{{ product_option.id }}">
                         <input type="hidden" name="quantity" value="{{ product_option.quantity }}">
-                        {% include 'pages.partials.product.options' with { product: product_option } %}
+                        {% include 'components.product.options' with { product: product_option } %}
                       </form>                   
                     {% endfor %}
                   </div>

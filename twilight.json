@@ -1129,9 +1129,12 @@
             ]
         }
     ],
-    "support_url": "https://example.com",
+    "support_url": "https://github.com/salla-hegazy/souq/issues",
+    "author": "Mohamed Hegazy",
+    "version": "1.0.3",
+    "categories": ["ecommerce", "modern", "rtl"],
     "description": {
-        "ar": "",
-        "en": ""
+        "ar": "قالب سوق – تصميم عصري واحترافي لمتجرك على منصة سلة، يدعم الوضع الداكن وعرض المنتجات بأسلوب أنيق مع تجربة تسوق سلسة على جميع الأجهزة.",
+        "en": "Souq theme – a modern, professional Salla store theme with dark mode support, elegant product display, and a seamless shopping experience across all devices."
     }
 }

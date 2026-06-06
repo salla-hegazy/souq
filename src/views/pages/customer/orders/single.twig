@@ -292,7 +292,7 @@
                               {% endif %}
 
                               <div class="rounded-md p-4 border border-gray-200 mb-2">
-                                {% include 'pages.partials.product.reservations' with { reservations: item.product_reservations } %}
+                                {% include 'components.product.reservations' with { reservations: item.product_reservations } %}
                               </div>
                           {% endif %}
 
@@ -426,7 +426,7 @@
                           <td class="text-sm p-3">{{ option.name }} :</td>
                           <td class="text-center p-3 font-medium text-xs">
                           {% if option.reservations %}
-                            {% include 'pages.partials.product.reservations' with { reservations: option.reservations } %}
+                            {% include 'components.product.reservations' with { reservations: option.reservations } %}
                           {% else %}
                             {{ option.value }}
                           {% endif %}
