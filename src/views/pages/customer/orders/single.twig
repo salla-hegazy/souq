@@ -72,7 +72,7 @@
 {% extends "layouts.customer" %}
 {% block inner_title %}
 <div class="flex justify-between items-center mb-2">
-    <h1 class="font-bold text-lg text-center text-start flex-1">
+    <h1 class="font-bold text-lg  text-start flex-1">
         {{ page.title }}
         {% if order.source is same as('buy_as_gift') %}
             <span class="inline-block text-primary mx-2"><i class="sicon-gift-sharing"></i>&nbsp;{{ trans('pages.orders.gift_tag') }}</span>

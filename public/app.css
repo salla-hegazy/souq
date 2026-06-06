@@ -4861,6 +4861,9 @@ input.tab:checked + .tab-content,
 .min-h-\[500px\]{
     min-height: 500px;
 }
+.min-h-\[60vh\]{
+    min-height: 60vh;
+}
 .min-h-full{
     min-height: 100%;
 }
@@ -5765,6 +5768,10 @@ input.tab:checked + .tab-content,
     font-size: 4.5rem;
     line-height: 1;
 }
+.text-8xl{
+    font-size: 6rem;
+    line-height: 1;
+}
 .text-base{
     font-size: 1rem;
     line-height: 1.5rem;
@@ -5784,6 +5791,9 @@ input.tab:checked + .tab-content,
 .text-xs{
     font-size: 0.75rem;
     line-height: 1rem;
+}
+.font-black{
+    font-weight: 900;
 }
 .font-bold{
     font-weight: 700;
@@ -6029,6 +6039,9 @@ input.tab:checked + .tab-content,
 }
 .opacity-100{
     opacity: 1;
+}
+.opacity-20{
+    opacity: 0.2;
 }
 .opacity-40{
     opacity: 0.4;
@@ -35656,6 +35669,9 @@ body.font-dinnextltarabic-regular .btn--add-to-cart {
     }
     .sm\:grid-cols-3{
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .sm\:flex-row{
+        flex-direction: row;
     }
     .sm\:items-start{
         align-items: flex-start;
