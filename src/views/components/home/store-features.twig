@@ -8,15 +8,23 @@
 | position      | Int    | Sorting number start from zero                                   |
 #}
 <section class="s-block s-block--features container">
-    <div class="grid grid-cols-[repeat(2,minmax(0,1fr))] md:grid-cols-[repeat(3,minmax(0,1fr))] gap-4 sm:gap-6 xl:gap-8">
-      {% for item in items %}
-          <div class="s-block--features__item">
-            <div class="feature-icon">
-              <i class="{{ item.icon }}"></i>
-            </div>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.text }}</p>
+  <div class="grid grid-cols-[repeat(2,minmax(0,1fr))] md:grid-cols-[repeat(3,minmax(0,1fr))] gap-4 sm:gap-6 xl:gap-8">
+    {% for item in items %}
+      <div class="card bg-base-100 shadow-sm hover:shadow-lg transition-all duration-400 group s-block--features__item
+                  {% if loop.first %}col-span-2 md:col-span-1{% endif %}">
+        <div class="card-body items-center text-center gap-4 py-8 px-5">
+
+          <div class="feature-icon relative w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center
+                      group-hover:bg-primary transition-colors duration-300 overflow-hidden">
+            <i class="{{ item.icon }} text-primary text-3xl group-hover:text-white transition-colors duration-300"></i>
+            <span class="absolute inset-0 bg-primary scale-0 group-hover:scale-100 transition-transform duration-300 origin-center rounded-2xl -z-[1]"></span>
           </div>
-      {% endfor %}
-    </div>
+
+          <h2 class="card-title text-sm font-bold text-base-content justify-center">{{ item.title }}</h2>
+          <p class="text-sm text-base-content/60 leading-relaxed">{{ item.text }}</p>
+
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </section>

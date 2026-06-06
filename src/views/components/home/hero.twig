@@ -8,49 +8,89 @@
 {% set hero_cta_text = theme.settings.get('hero_cta_text', trans('home.hero_cta')) %}
 {% set hero_image    = theme.settings.get('hero_image') %}
 
-<section class="hero relative overflow-hidden min-h-[480px] md:min-h-[580px] lg:min-h-[680px] flex items-center bg-souq-bg">
+<section class="hero-souq relative overflow-hidden min-h-[500px] md:min-h-[600px] lg:min-h-[700px] flex items-center bg-souq-secondary">
 
   {% if hero_image %}
     <div class="hero__bg-image absolute inset-0 will-change-transform">
-      <img src="{{ hero_image }}" alt="{{ hero_title }}" class="w-full h-full object-cover" loading="eager" fetchpriority="high">
-      <div class="absolute inset-0 bg-gradient-to-e from-souq-secondary/70 to-transparent"></div>
+      <img src="{{ hero_image }}" alt="{{ hero_title }}"
+           class="w-full h-full object-cover"
+           loading="eager" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-e from-souq-secondary/80 via-souq-secondary/50 to-transparent"></div>
     </div>
+  {% else %}
+    <div class="hero__bg-image absolute inset-0 bg-gradient-to-br from-souq-secondary via-souq-secondary/90 to-souq-primary/20"></div>
   {% endif %}
 
-  <div class="container relative z-10 py-20 md:py-28">
-    <div class="max-w-lg">
+  {# Decorative blurred circles #}
+  <div class="pointer-events-none absolute -top-32 -start-32 w-96 h-96 rounded-full bg-souq-primary/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-24 -end-24 w-80 h-80 rounded-full bg-souq-accent/10 blur-3xl"></div>
+
+  <div class="container relative z-10 py-24 md:py-32">
+    <div class="max-w-xl">
 
       {% if theme.settings.get('hero_eyebrow') %}
-        <p class="hero__eyebrow inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-souq-accent mb-4">
-          {{ theme.settings.get('hero_eyebrow') }}
-        </p>
+        <div class="hero__eyebrow mb-5">
+          <div class="badge badge-outline border-souq-accent text-souq-accent gap-2 px-4 py-3 text-sm font-medium tracking-wider uppercase">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-souq-accent animate-pulse"></span>
+            {{ theme.settings.get('hero_eyebrow') }}
+          </div>
+        </div>
       {% endif %}
 
-      <h1 class="hero__heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+      <h1 class="hero__heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight">
         {{ hero_title }}
       </h1>
 
       {% if hero_subtitle %}
-        <p class="hero__subtext text-lg text-white/80 mb-8 leading-relaxed">{{ hero_subtitle }}</p>
+        <p class="hero__subtext text-lg md:text-xl text-white/75 mb-10 leading-relaxed max-w-md">
+          {{ hero_subtitle }}
+        </p>
       {% endif %}
 
-      <div class="hero__cta-btn flex flex-wrap gap-3">
+      <div class="hero__cta-btn flex flex-wrap items-center gap-4">
         <a href="{{ hero_cta_url }}"
-           class="btn btn-primary rounded-full px-8 py-3 text-base font-semibold shadow-[0_0_24px_rgba(37,99,235,0.35)] hover:shadow-[0_0_32px_rgba(37,99,235,0.5)] transition-shadow focus:outline-none focus:ring-2 focus:ring-souq-primary focus:ring-offset-2">
+           class="btn btn-primary btn-lg rounded-full px-8 font-semibold shadow-[0_0_32px_rgba(37,99,235,0.4)] hover:shadow-[0_0_48px_rgba(37,99,235,0.6)] transition-all hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-souq-primary focus:ring-offset-2 focus:ring-offset-souq-secondary">
           {{ hero_cta_text }}
+          <i class="sicon-arrow-{{ theme.is_rtl ? 'left' : 'right' }} text-sm"></i>
         </a>
+        {% if theme.settings.get('hero_secondary_cta_url') %}
+          <a href="{{ theme.settings.get('hero_secondary_cta_url') }}"
+             class="btn btn-ghost btn-lg rounded-full px-8 text-white border-white/30 hover:bg-white/10 font-medium">
+            {{ theme.settings.get('hero_secondary_cta_text', trans('home.learn_more') ?? 'اعرف أكثر') }}
+          </a>
+        {% endif %}
       </div>
 
     </div>
   </div>
 
   {% if theme.settings.get('hero_trust_icons', true) %}
-    <div class="hero__trust-bar absolute bottom-0 inset-x-0 bg-white/10 backdrop-blur-sm border-t border-white/20">
-      <div class="container py-3 flex flex-wrap justify-center gap-6 text-white/90 text-sm">
-        <span class="flex items-center gap-1.5"><i class="sicon-shield-check"></i> {{ trans('home.trust_secure') ?? 'دفع آمن' }}</span>
-        <span class="flex items-center gap-1.5"><i class="sicon-truck"></i> {{ trans('home.trust_shipping') ?? 'شحن سريع' }}</span>
-        <span class="flex items-center gap-1.5"><i class="sicon-refresh"></i> {{ trans('home.trust_returns') ?? 'إرجاع مجاني' }}</span>
-        <span class="flex items-center gap-1.5"><i class="sicon-headphones"></i> {{ trans('home.trust_support') ?? 'دعم 24/7' }}</span>
+    <div class="hero__trust-bar absolute bottom-0 inset-x-0 bg-white/8 backdrop-blur-md border-t border-white/15">
+      <div class="container py-4 flex flex-wrap justify-center gap-x-8 gap-y-2 text-white/85 text-sm">
+        <span class="flex items-center gap-2">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
+            <i class="sicon-shield-check text-souq-accent"></i>
+          </span>
+          {{ trans('home.trust_secure') ?? 'دفع آمن' }}
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
+            <i class="sicon-truck text-souq-accent"></i>
+          </span>
+          {{ trans('home.trust_shipping') ?? 'شحن سريع' }}
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
+            <i class="sicon-refresh text-souq-accent"></i>
+          </span>
+          {{ trans('home.trust_returns') ?? 'إرجاع مجاني' }}
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
+            <i class="sicon-headphones text-souq-accent"></i>
+          </span>
+          {{ trans('home.trust_support') ?? 'دعم 24/7' }}
+        </span>
       </div>
     </div>
   {% endif %}

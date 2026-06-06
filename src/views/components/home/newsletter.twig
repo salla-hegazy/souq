@@ -1,11 +1,26 @@
 {# Newsletter subscription section #}
-<section class="newsletter-section bg-souq-primary py-16" data-animate>
-  <div class="container text-center text-white">
+<section class="newsletter-section relative overflow-hidden py-20" data-animate>
 
-    <h2 class="text-2xl md:text-3xl font-bold mb-2">{{ trans('home.newsletter_title') }}</h2>
-    <p class="text-white/80 mb-8 max-w-md mx-auto">{{ trans('home.newsletter_subtitle') }}</p>
+  {# Gradient background #}
+  <div class="absolute inset-0 bg-gradient-to-br from-souq-primary via-souq-primary/90 to-souq-accent/80"></div>
+  <div class="pointer-events-none absolute -top-20 -start-20 w-80 h-80 rounded-full bg-white/5 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-20 -end-20 w-96 h-96 rounded-full bg-white/5 blur-3xl"></div>
 
-    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+  <div class="container relative z-10 text-center text-white">
+
+    <div class="badge badge-outline border-white/40 text-white/90 mb-6 px-4 py-3 text-xs tracking-widest uppercase gap-2">
+      <i class="sicon-envelope text-souq-accent"></i>
+      {{ trans('home.newsletter_badge') ?? 'النشرة البريدية' }}
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">
+      {{ trans('home.newsletter_title') }}
+    </h2>
+    <p class="text-white/75 mb-10 max-w-md mx-auto text-lg leading-relaxed">
+      {{ trans('home.newsletter_subtitle') }}
+    </p>
+
+    <form class="max-w-lg mx-auto"
           x-data="{ email: '', sent: false, loading: false }"
           @submit.prevent="
             loading = true;
@@ -14,25 +29,50 @@
               .finally(() => loading = false);
           ">
 
-      <input type="email"
-             x-model="email"
-             required
-             placeholder="{{ trans('home.newsletter_placeholder') }}"
-             class="flex-1 rounded-full px-5 py-3 text-souq-text bg-white border-0 focus:ring-2 focus:ring-white focus:outline-none"
-             :disabled="sent || loading">
+      <div class="join w-full shadow-2xl">
+        <input type="email"
+               x-model="email"
+               required
+               placeholder="{{ trans('home.newsletter_placeholder') }}"
+               class="join-item input input-lg flex-1 w-full bg-white text-souq-text border-0 placeholder:text-souq-text-muted focus:outline-none rounded-s-full"
+               :disabled="sent || loading">
 
-      <button type="submit"
-              :disabled="sent || loading"
-              class="btn bg-white text-souq-primary hover:bg-white/90 rounded-full px-7 py-3 font-semibold transition-colors disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-souq-primary">
-        <span x-show="!sent && !loading">{{ trans('home.newsletter_subscribe') }}</span>
-        <span x-show="loading" x-cloak>
-          <i class="sicon-refresh animate-spin"></i>
-        </span>
-        <span x-show="sent" x-cloak>
-          <i class="sicon-check me-1"></i>{{ trans('home.newsletter_success') }}
-        </span>
-      </button>
+        <button type="submit"
+                :disabled="sent || loading"
+                class="join-item btn btn-secondary btn-lg rounded-e-full px-8 font-semibold border-0 disabled:opacity-60 min-w-[120px]">
+          <span x-show="!sent && !loading">{{ trans('home.newsletter_subscribe') }}</span>
+          <span x-show="loading" x-cloak>
+            <span class="loading loading-spinner loading-sm"></span>
+          </span>
+          <span x-show="sent" x-cloak class="flex items-center gap-2">
+            <i class="sicon-check"></i>{{ trans('home.newsletter_success') }}
+          </span>
+        </button>
+      </div>
+
+      <p x-show="sent" x-cloak
+         class="mt-4 text-white/80 text-sm animate-pulse">
+        <i class="sicon-check-circle me-1 text-green-300"></i>
+        {{ trans('home.newsletter_success_message') ?? 'شكراً! تم تسجيلك بنجاح.' }}
+      </p>
 
     </form>
+
+    {# Trust badges below form #}
+    <div class="flex flex-wrap justify-center gap-6 mt-10 text-white/60 text-xs">
+      <span class="flex items-center gap-1.5">
+        <i class="sicon-lock text-white/50"></i>
+        {{ trans('home.newsletter_privacy') ?? 'لا رسائل مزعجة' }}
+      </span>
+      <span class="flex items-center gap-1.5">
+        <i class="sicon-shield-check text-white/50"></i>
+        {{ trans('home.newsletter_no_spam') ?? 'بياناتك محمية' }}
+      </span>
+      <span class="flex items-center gap-1.5">
+        <i class="sicon-close-circle text-white/50"></i>
+        {{ trans('home.newsletter_unsubscribe') ?? 'إلغاء الاشتراك في أي وقت' }}
+      </span>
+    </div>
+
   </div>
 </section>
