@@ -15,14 +15,6 @@
     "development": "webpack --mode development",
     "watch": "webpack --mode development --watch"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "bufferutil",
-      "es5-ext",
-      "utf-8-validate"
-    ]
-  },
   "author": "Salla",
   "dependencies": {
     "@babel/runtime": "^7.28.6",
